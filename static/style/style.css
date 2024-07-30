@@ -1,0 +1,28 @@
+.paragraph {
+   color: marineblue;
+   font-family: monospace;
+   font-size: 20px;
+   margin-left: 5%;
+   margin-top: 5%;
+}
+
+.list {
+   color: darkblue;
+   font-family: monospace;
+   font-size: 15px;
+   margin-left: 5%;
+   margin-top: 5%;
+}
+
+.Header {
+    display: flex;
+    margin: 10%;
+    justify-content: center;
+    color: black;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+.main {
+   background-image: src();
+}
