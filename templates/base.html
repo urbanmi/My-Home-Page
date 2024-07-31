@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>My Homepage</title>
-    <link rel="stylesheet" href="static/style/style.css">
+    <link rel="stylesheet" href="/static/style/style.css">
 </head>
-<body class="main">
-{% block content %}
-
-{% endblock content %}
-
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/portfolio">Portfolio</a></li>
-    </ul>
-
+<body>
+    <div class="main">
+        {% block content %}
+        {% endblock content %}
+    </div>
+        <ul class="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/aboutMe">About</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
+        </ul>
 </body>
 </html>

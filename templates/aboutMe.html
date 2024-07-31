@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+    <p class="paragraph">
+        About me:
+    </p>
+    {% for item in aboutList %}
+    <ul class="list">
+        <li>{{item}}</li>
+    </ul>
+    {% endfor %}
 {% endblock content %}

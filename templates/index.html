@@ -2,14 +2,18 @@
 {% extends "base.html" %}\
 
 {% block content %}
+<div class="paragraph">
     <p>Here is the main page!</p>
     <p>{{ some_text }}</p>
     <p>The year is {{ current_year }}.</p>
     {% if cities %}
     {% for city in cities %}
-    <li>{{ city }}</li>
+    <ul class="list">
+        <li>{{city}}</li>
+    </ul>
     {% endfor %}
     {% else %}
     <p>No cities available</p>
     {% endif %}
+</div>
 {% endblock content %}

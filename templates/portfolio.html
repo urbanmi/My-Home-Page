@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+    <p class="paragraph">
+        My Portfolio:
+    </p>
+{% for item in portfolioList %}
+        <ul class="list">
+            <li>{{item}}</li>
+        </ul>
+{% endfor %}
 {% endblock content %}
