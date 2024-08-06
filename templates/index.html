@@ -3,17 +3,21 @@
 
 {% block content %}
 <div class="paragraph">
-    <p>Here is the main page!</p>
-    <p>{{ some_text }}</p>
-    <p>The year is {{ current_year }}.</p>
-    {% if cities %}
-    {% for city in cities %}
-    <ul class="list">
-        <li>{{city}}</li>
-    </ul>
+    <h1>Chat App</h1>
+
+    <p>
+        {% for message in messages %}
+    </p>
+    <p>
+        <strong>{{ message.author }}</strong>
+        {{ message.text }}
+    </p>
     {% endfor %}
-    {% else %}
-    <p>No cities available</p>
-    {% endif %}
+    <hr>
+    <form method="post" action="/add-message">
+        Your name: <br><input name="chat-name" type="text"><br>
+        Your Message: <br><textarea name="chat-message"></textarea><br>
+        <button type="submit">Send Message</button>
+    </form>
 </div>
 {% endblock content %}
