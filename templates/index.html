@@ -6,7 +6,7 @@
     <h1>Chat App</h1>
 
     <p>
-        {% for message in messages %}
+        {% for message in messages.items %}
     </p>
     <p>
         <strong>{{ message.author }}</strong>
@@ -19,5 +19,11 @@
         Your Message: <br><textarea name="chat-message"></textarea><br>
         <button type="submit">Send Message</button>
     </form>
+
+    <p>
+        {% for page_num in range(messages.pages) %}
+            <a href="/?page={{page_num+1}}">Page {{page_num+1</a>\
+        {% endfor %}
+    </p>
 </div>
 {% endblock content %}

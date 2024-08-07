@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, make_response, redirect
 from datetime import datetime
 
 from sqla_wrapper import SQLAlchemy
-
+from sqlalchemy_pagination import paginate
 
 app = Flask(__name__)
 
@@ -23,7 +23,12 @@ db.create_all()
 
 @app.route("/")
 def index():
-    messages = db.query(Message).all()
+    page = request.args.get("page")
+    if not page:
+        page = 1
+
+    messages_query = db.query(Message)
+    messages = paginate(query=messages_query, page=int(page), page_size=5)
     return render_template("index.html", messages=messages)
 
 @app.route("/add-message", methods=["POST"])
